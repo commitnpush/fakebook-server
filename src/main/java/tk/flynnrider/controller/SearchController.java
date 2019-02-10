@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import tk.flynnrider.domain.RecentSearch;
 import tk.flynnrider.service.SearchService;
 
-@Controller
 @RestController
 public class SearchController {
 	
