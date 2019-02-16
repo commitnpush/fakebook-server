@@ -9,4 +9,5 @@ public class Article {
 	private Group group;
 	private String content;
 	private String regdate;
+	private String user_id;
 }

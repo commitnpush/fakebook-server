@@ -17,5 +17,9 @@ public class ArticleService {
 	public List<Article> getArticles() {
 		return articleMapper.findAll();
 	}
+
+	public void addArticle(Article article) {
+		articleMapper.add(article);
+	}
 	
 }

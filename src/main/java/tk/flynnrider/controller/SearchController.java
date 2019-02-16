@@ -23,12 +23,11 @@ public class SearchController {
 	
 	@GetMapping("/recent-search")
 	public List<RecentSearch> getResentSearchList(){
-		System.out.println(searchService.findRecentSearchAll());
 		return searchService.findRecentSearchAll();
 	}
 	@PostMapping("/recent-search")
-	public List<RecentSearch> postResentSearchList(@RequestBody RecentSearch recentSearch, HttpServletRequest request) {
+	public void postResentSearchList(@RequestBody RecentSearch recentSearch) {
 		searchService.addRecentSearch(recentSearch);
-		return searchService.findRecentSearchAll();
+		//return searchService.findRecentSearchAll();
 	}
 }
