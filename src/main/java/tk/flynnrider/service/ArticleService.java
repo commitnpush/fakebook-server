@@ -21,5 +21,9 @@ public class ArticleService {
 	public void addArticle(Article article) {
 		articleMapper.add(article);
 	}
+
+	public List<Article> getMoreArticles(int id) {
+		return articleMapper.findMore(id);
+	}
 	
 }

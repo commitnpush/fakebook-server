@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,5 +27,10 @@ public class ArticleController {
 	public void postArticle(@RequestBody Article article) {
 		article.setUser_id("flynn");
 		articleService.addArticle(article);
+	}
+	
+	@GetMapping("/article/more/{id}")
+	public List<Article> getMoreArticles(@PathVariable int id) {
+		return articleService.getMoreArticles(id);
 	}
 }

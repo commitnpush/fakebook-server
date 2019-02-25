@@ -18,5 +18,8 @@ public interface ArticleMapper {
 
 	@Insert("insert into article(user_id, group_id, content, regdate) values(#{user_id}, null, #{content}, now())")
 	public void add(Article article);
+	
+	@Select("select * from article where id < #{value} order by regdate desc limit 0,3")
+	public List<Article> findMore(int id);
 
 }
