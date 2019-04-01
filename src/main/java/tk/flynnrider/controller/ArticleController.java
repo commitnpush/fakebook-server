@@ -22,6 +22,10 @@ public class ArticleController {
 	public List<Article> getArticles(){
 		return articleService.getArticles();
 	}
+	@GetMapping("/article/{keyword}")
+	public List<Article> getArticles(@PathVariable String keyword){
+		return articleService.getArticles(keyword);
+	}
 	
 	@PostMapping("/article")
 	public void postArticle(@RequestBody Article article) {
@@ -32,5 +36,10 @@ public class ArticleController {
 	@GetMapping("/article/more/{id}")
 	public List<Article> getMoreArticles(@PathVariable int id) {
 		return articleService.getMoreArticles(id);
+	}
+	
+	@GetMapping("/article/more/{id}/{keyword}")
+	public List<Article> getMoreArticles(@PathVariable int id, @PathVariable String keyword) {
+		return articleService.getMoreArticles(id, keyword);
 	}
 }

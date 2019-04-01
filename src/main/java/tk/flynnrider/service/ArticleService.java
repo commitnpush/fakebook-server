@@ -17,11 +17,19 @@ public class ArticleService {
 	public List<Article> getArticles() {
 		return articleMapper.findAll();
 	}
+	
+	public List<Article> getArticles(String keyword) {
+		return articleMapper.findAllByKeyword(keyword);
+	}
 
 	public void addArticle(Article article) {
 		articleMapper.add(article);
 	}
 
+	public List<Article> getMoreArticles(int id, String keyword) {
+		return articleMapper.findMoreByKeyword(id, keyword);
+	}
+	
 	public List<Article> getMoreArticles(int id) {
 		return articleMapper.findMore(id);
 	}
